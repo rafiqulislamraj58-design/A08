@@ -1,29 +1,32 @@
-import React from 'react'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 
 const Banner = () => {
   return (
-    <div>
-        <div
-  className="hero min-h-[60vh] container mx-auto mt-3.5 mb-3.5"
-  style={{
-    backgroundImage:
-      "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-  }}
->
-  <div className="hero-overlay"></div>
-  <div className="hero-content text-neutral-content text-center">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
-      </p>
-      <button className="btn btn-primary">Get Started</button>
-    </div>
-  </div>
-</div>
-    </div>
-  )
-}
+    <div className="relative container mx-auto mt-3.5 mb-3.5 h-[60vh] overflow-hidden ">
+      <Image
+        src='/banner.jpg'
+        alt="banner"
+        fill
+        className="object-cover rounded-lg "
+        priority
+      />
+      <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
 
-export default Banner
+      <div className="absolute inset-0 flex items-center justify-center text-center text-white">
+        <div className="max-w-md hover:scale-105 transition duration-300">
+          <h1 className="mb-5 text-5xl font-bold justify-center items-center cursor-pointer">Explore Our<br/> Premium Tile Gallery</h1>
+          <p className="mb-5">
+            Discover a curated selection of exquisite tiles designed to elevate your space with elegance and style.
+          </p>
+          <Link href={'/all-tiles'}><button className="btn btn-outline">Get Started</button></Link>
+        </div>
+      </div>
+
+    </div>
+  );
+};
+
+export default Banner;

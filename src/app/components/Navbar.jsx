@@ -17,7 +17,7 @@ const Navbar = () => {
       </ul>
       </div>
       <div>
-        <Link href={'/log'}>Login</Link>
+        <Link href={'/log'} className='bg-purple-500 rounded-md p-2 shadow text-white'>Login</Link>
       </div>
           
      </div>
