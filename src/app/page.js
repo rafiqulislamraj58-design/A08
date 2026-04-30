@@ -1,13 +1,18 @@
-import Image from "next/image";
-import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import FeaturedTiles from "./components/FeaturedTiles";
 
-export default function Home() {
+async function getTiles() {
+  const res = await fetch("https://a08server.onrender.com/tiles", {
+    cache: "no-store",
+  });
+  return res.json();
+}
+export default async function Home() {
+  const tiles = await getTiles(); 
   return (
     <>
-      <Banner/>
-      <FeaturedTiles/>
+      <Banner />
+      <FeaturedTiles tiles={tiles} />
     </>
   );
 }
