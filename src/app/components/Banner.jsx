@@ -21,7 +21,7 @@ const Banner = () => {
           <p className="mb-5">
             Discover a curated selection of exquisite tiles designed to elevate your space with elegance and style.
           </p>
-          <Link href={'/all-tiles'}><button className="btn btn-outline">Get Started</button></Link>
+          <Link href={'/all-tiles'}><button className="btn btn-outline">Browse Now</button></Link>
         </div>
       </div>
 
