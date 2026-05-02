@@ -15,7 +15,7 @@ const AllTilesPage = async () => {
     <div>
       <h1 className='text-2xl font-bold mt-4 text-center '>All-Tiles</h1>
 
-      <div className="grid grid-cols-3 gap-4 container mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 container mx-auto mb-4">
         {tiles.map((tile) => (
           <div key={tile.id} className="border rounded-lg p-4">
             <img src={tile.image} className="w-full h-48 object-cover rounded" />

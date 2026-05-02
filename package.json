@@ -10,6 +10,13 @@
     "server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "@better-auth/mongo-adapter": "^1.6.9",
+    "@gravity-ui/icons": "^2.18.0",
+    "@heroui/react": "^3.0.3",
+    "@heroui/styles": "^3.0.3",
+    "better-auth": "^1.6.9",
+    "framer-motion": "^12.38.0",
+    "mongodb": "^7.2.0",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -18,7 +25,6 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "daisyui": "^5.5.19",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "json-server": "^1.0.0-beta.15",
