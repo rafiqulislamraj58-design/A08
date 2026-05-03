@@ -12,50 +12,55 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
+import { useState } from "react";
+import Link from "next/link";
 
-export default function RegisterPage() {
-
-    const router = useRouter()
+export default function LoginPage() {
+  const router = useRouter();
+  const [errorMsg, setErrorMsg] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setErrorMsg("");
 
-    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const {data, error} = await authClient.signUp.email({
-        name,
-        email,
-        password,
-    })
-    console.log({data, error})
+    const { data, error } = await authClient.signIn.email({
+      email,
+      password,
+    });
 
-    if(!error) {
-        router.push('/')
+    console.log({ data, error });
+
+    if (!error) {
+      router.push("/");
+    } else {
+      setErrorMsg(error.message || "Login failed. Please try again.");
     }
+  };
 
+  const handelGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5 mb-5">
-      <h1 className="text-center text-2xl font-bold">Register</h1>
+      <h1 className="text-center text-2xl font-bold">Log-In</h1>
+
+      {errorMsg && (
+        <p className="text-red-500 text-center text-sm mt-2">{errorMsg}</p>
+      )}
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
-        <TextField
-          isRequired
-          name="email"
-          type="email"
+        <TextField isRequired name="email" type="email"
           validate={(value) => {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
               return "Please enter a valid email address";
             }
-
             return null;
           }}
         >
@@ -64,22 +69,11 @@ export default function RegisterPage() {
           <FieldError />
         </TextField>
 
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
+        <TextField isRequired minLength={8} name="password" type="password"
           validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-
+            if (value.length < 8) return "Password must be at least 8 characters";
+            if (!/[A-Z]/.test(value)) return "Password must contain at least one uppercase letter";
+            if (!/[0-9]/.test(value)) return "Password must contain at least one number";
             return null;
           }}
         >
@@ -94,13 +88,29 @@ export default function RegisterPage() {
         <div className="flex gap-2">
           <Button type="submit">
             <Check />
-            Submit
+            Login
           </Button>
           <Button type="reset" variant="secondary">
             Reset
           </Button>
         </div>
       </Form>
+      <p className="text-center mt-3">
+        Dont have an account?
+        <Link href="/register" className="text-blue-500 underline">
+          Register
+        </Link>
+      </p>
+
+      <p className="text-center mt-2">or</p>
+
+      <Button
+        onClick={handelGoogleSignIn}
+        variant="outline"
+        className="w-full"
+      >
+        <GrGoogle /> Log-In With Google
+      </Button>
     </Card>
   );
 }
