@@ -7,7 +7,6 @@ import { Button } from '@heroui/react'
 
 const Navbar = () => {
  const userData = authClient.useSession()
- console.log(userData);
  const user =  userData.data?.user
 
 
