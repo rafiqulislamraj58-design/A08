@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ 🧱 Tiles Gallery
 
-## Getting Started
+ 🌐 Live Link
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ 📌 Project Idea
 
-## Learn More
+This is a simple Tiles Gallery website.
+User can see different tiles, search tiles and view details.
+Main goal is make a clean and responsive website with login system.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ 🚀 Main Features
+ User can search tiles by name Show all tiles in gallery Home page show 4 featured tiles User can login and register Google login also added User profile page available User can update name and image Website is responsive (mobile, tablet, desktop)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ 🧭 Routes
+
+ Public Route
+ `/` → Home `/all-tiles` → All Tiles `/login` → Login `/register` → Register
+
+ Private Route
+ `/tile/[id]` → Tile Details `/my-profile` → Profile Page
+
+
+
+ 🏠 Home Page
+ Big banner: "Discover Your Perfect Aesthetic" Button for go to All Tiles Marquee text scrolling Show top 4 tiles
+
+
+
+ 🖼️ All Tiles Page
+ Search input Show all tiles Each tile have image and title Details button for view more
+
+
+
+ 🔍 Tile Details
+ Big image show Tile info like title, description, category
+
+
+
+ 🔐 Auth System
+
+ Login
+ Email and password Google login If error show message
+
+ Register
+ Name Email Photo URL Password After register go login page
+
+
+
+ 👤 My Profile
+ Show user info Update name and image option
+
+
+
+ 🛠️ Technology
+ Next.js Tailwind CSS HeroUI  BetterAuth MongoDB JSON Server
+
+
+
+ 📦 Packages
+
+ next
+ react
+ tailwindcss
+ @heroui/react
+ better-auth
+ mongodb
+
+ 📌 Extra
+ Loading spinner added 404 page added Private route protection
+

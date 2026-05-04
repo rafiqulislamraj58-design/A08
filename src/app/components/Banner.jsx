@@ -6,7 +6,7 @@ import { Button } from "@heroui/react";
 
 const Banner = () => {
   return (
-    <div className="relative container mx-auto mt-3.5 mb-3.5 h-[60vh] overflow-hidden">
+    <div className="relative container mx-auto mt-3.5 mb-3.5 h-[60vh]  md:h-[60vh] overflow-hidden">
       <Image
         src='/banner.jpg'
         alt="banner"
@@ -18,7 +18,7 @@ const Banner = () => {
 
       <div className="absolute inset-0 flex items-center justify-center text-center text-white">
         <div className="max-w-md hover:scale-105 transition duration-300">
-          <h1 className="mb-5 text-5xl font-bold justify-center items-center cursor-pointer">
+          <h1 className="mb-5  text-3xl md:text-5xl  font-bold justify-center items-center cursor-pointer">
             Explore Our<br/> Premium Tile Gallery
           </h1>
           <p className="mb-5">

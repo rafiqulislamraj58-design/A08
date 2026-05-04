@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-default-100 text-default-700 px-10 py-10  bg-slate-200">
-        <div className="flex flex-wrap justify-between gap-10">
+        <div className="flex flex-wrap justify-between  md:justify-between  gap-10">
 
           <div className="flex flex-col gap-2">
             <h6 className="font-bold text-default-900 uppercase text-sm tracking-wider">Services</h6>

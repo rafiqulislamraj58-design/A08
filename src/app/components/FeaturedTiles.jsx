@@ -24,7 +24,7 @@ const FeaturedTiles = ({tiles}) => {
     </section>
     {tilear && (
       <div className="fixed inset-0 bg-black/90 flex justify-center items-center z-50">
-       <div className="bg-white p-6 rounded-lg w-[400px] relative shadow-lg">
+       <div className="bg-white p-6 rounded-lg w-[90vw] md:w-[400px]  relative shadow-lg">
      <button 
      onClick={()=>settiles(null)} className="absolute top-2 right-2 text-red-500 text-lg">
      x

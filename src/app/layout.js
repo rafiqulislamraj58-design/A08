@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
@@ -26,7 +27,10 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
+       
+          {children}
+        
+        
         <Footer />
       </body>
     </html>
