@@ -8,7 +8,6 @@ const db = client.db("tiles_galary");
 export const auth = betterAuth({
   database: mongodbAdapter(db, {
     client
-     
   }),
   emailAndPassword: { 
     enabled: true, 
